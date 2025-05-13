@@ -219,17 +219,7 @@ localStorage.setItem('userTopic', topic);
 alert(`Topic set to: ${topic}`);
 }
 </script>
-<script>
-if ('serviceWorker' in navigator) {
-navigator.serviceWorker.register('/service-worker.js')
-.then(function(registration) {
-console.log('Service Worker registered with scope:', registration.scope);
-})
-.catch(function(error) {
-console.log('Service Worker registration failed:', error);
-});
-}
-</script>
+  
 <script>
 let deferredPrompt;
 const installBtn = document.getElementById('installBtn');
@@ -359,5 +349,16 @@ cursor: pointer;
 <p>Get in touch with Sovereign Academy.</p>
 <button class="button">Send Message</button>
 <script src="voice-search.js"></script>
+  <script>
+if ('serviceWorker' in navigator) {
+navigator.serviceWorker.register('/service-worker.js')
+.then(function(registration) {
+console.log('Service Worker registered with scope:', registration.scope);
+})
+.catch(function(error) {
+console.log('Service Worker registration failed:', error);
+});
+}
+</script>
 </body>
 </html>
