@@ -1,0 +1,108 @@
+<!-- Sage Chatbot - Floating AI Companion -->
+<style>
+#sageChatBtn {
+position: fixed;
+bottom: 20px;
+right: 20px;
+background-color: #2C3E50;
+color: white;
+padding: 12px 18px;
+border: none;
+border-radius: 50px;
+font-size: 16px;
+cursor: pointer;
+z-index: 1000;
+}
+#sageChatWindow {
+display: none;
+position: fixed;
+bottom: 80px;
+right: 20px;
+width: 300px;
+max-height: 400px;
+background: white;
+border: 2px solid #2C3E50;
+border-radius: 10px;
+z-index: 1001;
+box-shadow: 0 0 10px rgba(0,0,0,0.3);
+overflow: hidden;
+display: flex;
+flex-direction: column;
+}
+#sageChatHeader {
+background-color: #2C3E50;
+color: white;
+padding: 10px;
+font-weight: bold;
+}
+#sageMessages {
+flex: 1;
+padding: 10px;
+overflow-y: auto;
+font-size: 14px;
+}
+#sageInputForm {
+display: flex;
+border-top: 1px solid #ccc;
+}
+#sageInput {
+flex: 1;
+padding: 8px;
+border: none;
+border-right: 1px solid #ccc;
+}
+#sageSendBtn {
+padding: 8px 10px;
+background-color: #2C3E50;
+color: white;
+border: none;
+cursor: pointer;
+}
+</style>
+<button id="sageChatBtn">💬 Ask Sage</button>
+<div id="sageChatWindow">
+<div id="sageChatHeader">Sage - Legal AI Coach</div>
+<div id="sageMessages">
+<p><strong>Sage:</strong> What’s going on? Hit me with your question.</p>
+</div>
+<form id="sageInputForm">
+<input type="text" id="sageInput" placeholder="Type your question..." />
+<button type="submit" id="sageSendBtn">Send</button>
+</form>
+</div>
+<script>
+const chatBtn = document.getElementById('sageChatBtn');
+const chatWindow = document.getElementById('sageChatWindow');
+const chatForm = document.getElementById('sageInputForm');
+const chatInput = document.getElementById('sageInput');
+const chatMsgs = document.getElementById('sageMessages');
+chatBtn.onclick = () => {
+chatWindow.style.display = (chatWindow.style.display === 'none') ? 'flex' : 'none';
+};
+chatForm.onsubmit = async (e) => {
+e.preventDefault();
+const userMsg = chatInput.value.trim();
+if (!userMsg) return;
+chatMsgs.innerHTML += `<p><strong>You:</strong> ${userMsg}</p>`;
+chatInput.value = '';
+// Simulated Sage reply (replace this with actual OpenAI API call if needed)
+setTimeout(() => {
+const topic = localStorage.getItem('userTopic') || 'general';
+const response = await fetch(`${endpoint}`, {
+method: 'POST',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify({ message: userMsg, topic })
+});
+const data = await response.json();
+chatMsgs.innerHTML += `<p><strong>Sage:</strong> ${data.reply}</p>`;
+chatMsgs.scrollTop = chatMsgs.scrollHeight;
+};
+<script>
+function selectTopic(topic) {
+localStorage.setItem('userTopic', topic);
+alert(`Topic selected: ${topic}. Sage will tailor your help.`);
+}
+</script>
+}
+const endpoint = 'https://ask-sage-g5hds2ybd-gina-lopezs-projects.vercel.app/api/chat';
+</script>
