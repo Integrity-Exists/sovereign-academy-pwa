@@ -1,0 +1,362 @@
+----- index.html -----
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sovereign Academy - Home</title>
+<div style="background-color: #fff8dc; color: #444; padding: 15px; text-align: center;
+font-weight: bold; border-bottom: 2px solid #ccc;">
+🚧 Sovereign Academy is still under active construction — but we're already live and ready to
+help! Check back often for new topics and tools. 💪
+</div>
+<div style="text-align: center; margin-top: 20px;">
+<button id="installBtn" style="padding: 10px 20px; font-size: 16px; border-radius: 6px; cursor:
+pointer; display: none;">
+📲 Install Sovereign Academy App
+</button>
+</div>
+<link rel="manifest" href="manifest.json">
+<style>
+.testimonials {
+text-align: center;
+margin-top: 40px;
+}
+.carousel {
+position: relative;
+height: 60px;
+overflow: hidden;
+}
+.quote {
+animation: slide 12s infinite;
+position: absolute;
+width: 100%;
+opacity: 0;
+font-size: 1.2em;
+transition: opacity 1s ease-in-out;
+}
+.quote:nth-child(1) { animation-delay: 0s; }
+.quote:nth-child(2) { animation-delay: 4s; }
+.quote:nth-child(3) { animation-delay: 8s; }
+@keyframes slide {
+0% { opacity: 0; }
+10% { opacity: 1; }
+30% { opacity: 1; }
+40% { opacity: 0; }
+100% { opacity: 0; }
+}
+:root {
+--primary-color: #2C3E50; /* Royal Blue */
+--secondary-color: #F4D03F; /* Light Gold */
+--accent-color: #ECF0F1; /* Soft White/Silver */
+}
+body {
+background-color: var(--accent-color);
+color: var(--primary-color);
+font-family: Arial, sans-serif;
+padding: 20px;
+}
+<div class="navbar">
+<a href="index.html" style="color: var(--secondary-color); margin-right: 20px;">Home</a>
+<a href="about.html" style="color: var(--secondary-color); margin-right: 20px;">About</a>
+<a href="contact.html" style="color: var(--secondary-color); margin-right: 20px;">Contact</a>
+<a href="ask-sage.html" style="color: var(--secondary-color); margin-right: 20px;">Ask
+Sage</a>
+<a href="court-prep.html" style="color: var(--secondary-color); margin-right: 20px;">Court
+Prep</a>
+<a href="dss-defense.html" style="color: var(--secondary-color); margin-right: 20px;">DSS
+Defense</a>
+<a href="dss-strategy-tools.html" style="color: var(--secondary-color); margin-right:
+20px;">Strategy Tools</a>
+<a href="printable-resources.html" style="color: var(--secondary-color); margin-right:
+20px;">Printable Resources</a>
+</div>
+<!-- Voice Search Button -->
+<div style="text-align: center; margin-top: 10px;">
+<button onclick="startVoiceSearch()" style="padding: 10px 20px; font-size: 16px;
+border-radius: 6px; cursor: pointer;">
+🎤 Voice Search
+</button>
+</div>
+<img src="logo.png" alt="Sovereign Academy Logo" style="width: 150px;">
+.navbar {
+background-color: var(--primary-color);
+color: var(--secondary-color);
+padding: 1rem;
+font-size: 24px;
+}
+.button {
+background-color: var(--secondary-color);
+color: var(--primary-color);
+padding: 10px 20px;
+border-radius: 5px;
+border: none;
+cursor: pointer;
+}
+</style>
+<script>
+function selectTopic(topic) {
+localStorage.setItem('userTopic', topic);
+alert(`Topic selected: ${topic}. Sage will tailor your help.`);
+}
+</script>
+<style>
+.topic-buttons {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+justify-content: center;
+margin-top: 20px;
+}
+.topic-buttons button {
+padding: 12px 20px;
+font-size: 16px;
+border-radius: 8px;
+border: none;
+cursor: pointer;
+background-color: #2c3e50;
+color: #fff;
+transition: background 0.3s ease, transform 0.2s ease;
+}
+.topic-buttons button:hover {
+background-color: #34495e;
+transform: scale(1.05);
+}
+</style>
+</head>
+<body>
+<div class="navbar">Sovereign Academy - Home</div>
+<h1>Welcome to Sovereign Academy!</h1>
+<p>This is the homepage.</p>
+<div style="text-align: center; margin-top: 40px; position: relative;">
+<input type="text" id="smartSearch" placeholder="🔍 Search legal topics..."
+style="padding: 10px 40px 10px 20px; width: 60%; font-size: 16px; border-radius: 6px;
+border: 1px solid #ccc;"
+onkeyup="smartNavigate(this.value)">
+<span style="position: absolute; right: 22%; top: 50%; transform: translateY(-50%); font-size:
+18px; color: #999;">🔍</span>
+</div>
+<ul id="smartSuggestions" style="list-style: none; padding: 0; margin: 5px auto 0; width: 60%;
+text-align: left; display: none; border: 1px solid #ccc; border-radius: 6px; background: #fff;
+font-size: 16px; max-height: 150px; overflow-y: auto;"></ul>
+<section class="testimonials">
+<h2>What People Are Saying</h2>
+<div class="carousel">
+<div class="quote">"I never thought I could file my own motion — until now!" – Maria T.</div>
+<div class="quote">"The Court Prep checklist gave me confidence!" – Jamal W.</div>
+<div class="quote">"Sovereign Academy is a lighthouse in legal fog." – Leah R.</div>
+</div>
+</section>
+<button class="button">Learn More</button>
+<footer style="text-align: center; margin-top: 40px; color: var(--primary-color);">
+&copy; 2025 Sovereign Academy. All rights reserved.
+<!-- Start of Tawk.to Script -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/681d203afe55ac190d5636e6/1iqosbpkt';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!-- End of Tawk.to Script -->
+<!-- Include Sage Chatbot -->
+<iframe src="sage-chatbot.html" style="display: none;"></iframe>
+<script>
+<script>
+function selectTopic(topic) {
+localStorage.setItem('userTopic', topic);
+alert(`Topic selected: ${topic}. Sage will tailor your help.`);
+}
+<script>
+function getSageReply(msg) {
+const topic = localStorage.getItem('userTopic') || 'general';
+if (msg.toLowerCase().includes("dss"))
+return "First thing, don’t panic. Did they provide documentation or just threats?";
+if (msg.toLowerCase().includes("eviction"))
+return "They can’t just boot you without notice. Let’s dig into your tenant rights.";
+if (msg.toLowerCase().includes("custody"))
+return "You’ve got rights — has there been a formal petition or emergency hearing?";
+if (msg.toLowerCase().includes("estate"))
+return "If this is about inheritance, probate, or wills, I’ve got you. What happened?";
+return `Let’s break this down. You asked about ${topic}. Start with the facts and I’ll guide you
+from there.`;
+}
+</script>
+<script>
+const chatBtn = document.createElement('div');
+chatBtn.id = 'sageChatBtn';
+chatBtn.textContent = 'Ask Sage';
+document.body.appendChild(chatBtn);
+const chatWindow = document.createElement('iframe');
+chatWindow.src = 'sage-chatbot.html';
+chatWindow.id = 'sageChatWindow';
+chatWindow.style.position = 'fixed';
+chatWindow.style.bottom = '80px';
+chatWindow.style.right = '20px';
+chatWindow.style.width = '300px';
+chatWindow.style.height = '400px';
+chatWindow.style.border = 'none';
+chatWindow.style.display = 'none';
+chatWindow.style.zIndex = '999';
+document.body.appendChild(chatWindow);
+chatBtn.onclick = () => {
+chatWindow.style.display = chatWindow.style.display === 'none' ? 'block' : 'none';
+};
+</script>
+<div class="topic-buttons">
+<button onclick="setTopic('custody')">󰔧 Custody & Family Law</button>
+<button onclick="setTopic('eviction')">🏠 Evictions & Housing</button>
+<button onclick="setTopic('records')">📂 Criminal Records & Rights</button>
+<button onclick="setTopic('dss')">🧾 CPS & DSS Defense</button>
+<button onclick="setTopic('liberties')">⚖️ Civil Liberties & Due Process</button>
+<button onclick="setTopic('estate')">🏛 Estate & Probate</button>
+</div>
+<script>
+function setTopic(topic) {
+localStorage.setItem('userTopic', topic);
+alert(`Topic set to: ${topic}`);
+}
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+window.addEventListener('load', function () {
+navigator.serviceWorker.register('/gina-app/service-worker.js')
+.then(function (reg) {
+console.log('Service worker registered.', reg);
+});
+});
+}
+</script>
+<script>
+let deferredPrompt;
+const installBtn = document.getElementById('installBtn');
+window.addEventListener('beforeinstallprompt', (e) => {
+e.preventDefault();
+deferredPrompt = e;
+installBtn.style.display = 'inline-block';
+});
+installBtn.addEventListener('click', () => {
+if (deferredPrompt) {
+deferredPrompt.prompt();
+deferredPrompt.userChoice.then((choiceResult) => {
+if (choiceResult.outcome === 'accepted') {
+console.log('App installed');
+}
+deferredPrompt = null;
+installBtn.style.display = 'none';
+});
+}
+});
+</script>
+<script>
+let deferredPrompt;
+const installBtn = document.getElementById('installBtn');
+window.addEventListener('beforeinstallprompt', (e) => {
+e.preventDefault();
+deferredPrompt = e;
+installBtn.style.display = 'inline-block';
+});
+installBtn.addEventListener('click', () => {
+if (deferredPrompt) {
+deferredPrompt.prompt();
+deferredPrompt.userChoice.then((choiceResult) => {
+if (choiceResult.outcome === 'accepted') {
+console.log('Sovereign Academy installed');
+}
+deferredPrompt = null;
+installBtn.style.display = 'none';
+});
+}
+});
+</script>
+</body>
+<section style="text-align: center; margin: 50px 0;">
+<h2>🛡 DSS Defense Center</h2>
+<p>Have you been wronged by DSS? Speak up. Get support. Fight back.</p>
+<a href="dss-strategy-tools.html" class="button">Go to DSS Defense</a>
+</section>
+</footer>
+</html>
+----- about.html -----
+<!DOCTYPE html>
+<html>
+<head>
+<title>About - Sovereign Academy</title>
+<style>
+:root {
+--primary-color: #2C3E50; /* Royal Blue */
+--secondary-color: #F4D03F; /* Light Gold */
+--accent-color: #ECF0F1; /* Soft White/Silver */
+}
+body {
+background-color: var(--accent-color);
+color: var(--primary-color);
+font-family: Arial, sans-serif;
+padding: 20px;
+}
+.navbar {
+background-color: var(--primary-color);
+color: var(--secondary-color);
+padding: 1rem;
+font-size: 24px;
+}
+.button {
+background-color: var(--secondary-color);
+color: var(--primary-color);
+padding: 10px 20px;
+border-radius: 5px;
+border: none;
+cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div class="navbar">Sovereign Academy - About</div>
+<h1>About Us</h1>
+<p>Learn more about Sovereign Academy and our mission.</p>
+<a href="about.html" class="button">Learn More</a>
+</body>
+</html>
+----- contact.html -----
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact - Sovereign Academy</title>
+<style>
+:root {
+--primary-color: #2C3E50; /* Royal Blue */
+--secondary-color: #F4D03F; /* Light Gold */
+--accent-color: #ECF0F1; /* Soft White/Silver */
+}
+body {
+background-color: var(--accent-color);
+color: var(--primary-color);
+font-family: Arial, sans-serif;
+padding: 20px;
+}
+.navbar {
+background-color: var(--primary-color);
+color: var(--secondary-color);
+padding: 1rem;
+font-size: 24px;
+}
+.button {
+background-color: var(--secondary-color);
+color: var(--primary-color);
+padding: 10px 20px;
+border-radius: 5px;
+border: none;
+cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div class="navbar">Sovereign Academy - Contact</div>
+<h1>Contact Us</h1>
+<p>Get in touch with Sovereign Academy.</p>
+<button class="button">Send Message</button>
+<script src="voice-search.js"></script>
+</body>
+</html>
