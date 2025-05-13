@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DSS Strategy Tools - Sovereign Academy</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+body {
+font-family: Arial, sans-serif;
+padding: 20px;
+background-color: var(--accent-color, #f9f9f9);
+color: var(--primary-color, #333);
+}
+h1, h2 {
+text-align: center;
+}
+.container {
+max-width: 800px;
+margin: auto;
+}
+.form-section, .dashboard-section {
+background: white;
+padding: 20px;
+margin-top: 30px;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+label {
+display: block;
+margin-top: 15px;
+font-weight: bold;
+}
+input, textarea, select {
+width: 100%;
+padding: 10px;
+margin-top: 5px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+button {
+margin-top: 20px;
+padding: 10px 20px;
+background-color: var(--secondary-color, #003366);
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+.results {
+margin-top: 15px;
+padding: 10px;
+background: #e0f7e9;
+border: 1px solid #b2dfdb;
+border-radius: 5px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>DSS Defense Strategy Tools</h1>
+<div class="form-section">
+<h2>Generate PDF Strategy Plan</h2>
+<form id="strategyForm">
+<label for="case">Case Type</label>
+<select id="case" required>
+<option value="CPS">CPS</option>
+<option value="Kinship Custody">Kinship Custody</option>
+<option value="Foster Parent">Foster Parent</option>
+<option value="Reunification">Reunification</option>
+</select>
+<label for="goal">Main Goal</label>
+<input type="text" id="goal" required />
+<label for="barriers">Main Barriers</label>
+<textarea id="barriers" rows="4" required></textarea>
+<button type="submit">Create My Plan (PDF)</button>
+</form>
+<div id="pdfStatus" class="results"></div>
+</div>
+<div class="dashboard-section">
+<h2>Live Case Tracker</h2>
+<p><em>Feature coming soon:</em> Visual dashboard of most common DSS conflict types
+and strategic recommendations.</p>
+</div>
+</div>
+<script>
+document.getElementById("strategyForm").addEventListener("submit", function(e) {
+e.preventDefault();
+const caseType = document.getElementById("case").value;
+const goal = document.getElementById("goal").value;
+const barriers = document.getElementById("barriers").value;
+const summary = `DSS Strategy Plan:\n\nCase Type: ${caseType}\nGoal: ${goal}\nBarriers:
+${barriers}`;
+const blob = new Blob([summary], { type: "application/pdf" });
+const url = URL.createObjectURL(blob);
+const link = document.createElement("a");
+link.href = url;
+link.download = "DSS_Strategy_Plan.txt"; // Change to .pdf if using a converter
+link.click();
+document.getElementById("pdfStatus").textContent = "✅ Your strategy plan is ready to
+download!";
+})();
+</script>
+<!-- Now back in HTML -->
+<hr>
+</script>
+<hr>
+<h2> What to Do If DSS Shows Up</h2>
+<ol>
+<li><strong>Stay calm</strong> and do not allow entry without a warrant.</li>
+<li><strong>Ask for identification</strong> and request their business card.</li>
+<li><strong>Do not answer questions</strong> without legal representation.</li>
+<li><strong>Document everything</strong>: who came, what time, what was said.</li>
+<li><strong>Politely refuse entry</strong> unless they present a valid court order or there’s a
+clear emergency.</li>
+</ol>
+<hr>
+<h2>📄 Tools You Can Use</h2>
+<ul>
+<li><a href="motion-to-dismiss.docx" download>📄 Motion to Dismiss Template
+(DOCX)</a></li>
+<li><a href="notice-of-appearance.docx" download>📝 Notice of Appearance (DOCX)</a></li>
+<li><a href="court-prep-checklist.pdf" download>🧾 Court Prep Checklist (PDF)</a></li>
+</ul>
+<p><a href="printable-resources.html">🖨 View More Printable Legal Resources</a></p>
+<hr>
+<h2>⚖️ Know Your Rights</h2>
+<p>You don’t need a law degree to know how to protect yourself. Start here:</p>
+<ul>
+<li><strong>📜 You have the right to remain silent.</strong><br>
+You do NOT have to answer questions from DSS or sign anything without a lawyer.</li>
+<li><strong>🏠 You have the right to privacy.</strong><br>
+DSS cannot enter your home without a court order or clear emergency.</li>
+<li><strong>󰥕 You have the right to legal representation.</strong><br>
+If you’re being investigated or brought to court, you can ask for a public defender or legal
+aid.</li>
+<li><strong>📸 You have the right to record.</strong><br>
+In Virginia, you can legally record conversations you are a part of — protect yourself by
+documenting.</li>
+<li><strong>🛑 You can say NO.</strong><br>
+You are allowed to refuse drug tests, interviews, or home inspections unless ordered by a
+judge.</li>
+</ul>
+<p><em>When in doubt, ask Sage. It’s better to be informed than intimidated.</em></p>
+</body>
+</html>
+</body>
+</html>
