@@ -1,7 +1,8 @@
-{
+{.{
   "name": "Sovereign Academy",
   "short_name": "Sovereign",
-  "description": "Self-help legal tools, AI assistance, and printable resources for court, DSS, and more.",
+ "description": "AI-powered legal coaching platform developed by integrity-exists / Gina Lopez. Owned and operated by Integrity Svc.s LLC.",
+}
   "lang": "en",
   "dir": "ltr",
   "start_url": "/index.html",
