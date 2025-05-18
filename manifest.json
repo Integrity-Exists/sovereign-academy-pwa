@@ -1,17 +1,16 @@
 {
   "name": "Sovereign Academy",
   "short_name": "Sovereign",
-  "description": "AI-powered legal coaching platform developed by integrity-exists / Gina Lopez. Owned and operated by Integrity Svc.s LLC.",
+  "description": "Legal empowerment tools powered by IntegrityExists and the Ask Sage AI assistant.",
   "lang": "en",
   "dir": "ltr",
-  "start_url": "/index.html",
+  "start_url": "welcome.html",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#004080",
+  "background_color": "#fefefe",
+  "theme_color": "#111111",
   "orientation": "portrait",
   "scope": "/",
-  "icons": [
-    {
+
       "src": "icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
