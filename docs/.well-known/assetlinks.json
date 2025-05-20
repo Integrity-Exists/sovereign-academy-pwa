@@ -3,9 +3,9 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "io.github.integrity_exists.twa",
+      "package_name": "com.integrity.sovereignacademy",
       "sha256_cert_fingerprints": [
-        "3E:24:56:97:E0:03:C7:50:15:29:5B:FF:2F:CB:83:7A:45:B5:24:51:AA:3D:2D:6E:36:ED:70:EC:6B:8F:BF:D8"
+        "3E:24:56:97:E0:03:C7:50:15:29:5B:FF:2F:CB:83:7A:45:B5:24:51:AA:3D:2D:68:49:23:0B:A3:99:58:55:59"
       ]
     }
   }
