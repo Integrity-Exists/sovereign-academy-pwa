@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Sovereign Academy: Your AI-powered legal toolkit for self-representation, DSS defense, and knowing your rights." />
+  <meta property="og:title" content="Sovereign Academy" />
+  <meta property="og:description" content="Fight back with knowledge. Get legal tools, case law, and AI coaching for your courtroom journey." />
+  <meta property="og:image" content="https://integrityexists.com/icons/ask-sage-cover.png" />
+  <meta property="og:url" content="https://integrityexists.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="/icons/icon-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/icons/icon-512.png" />
+  <title>Sovereign Academy - Home</title>
+  <style>
+    :root {
+      --primary-color: #2C3E50;
+      --secondary-color: #F4D03F;
+      --accent-color: #ECF0F1;
+    }
+    body {
+      background-color: var(--accent-color);
+      color: var(--primary-color);
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .navbar {
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+      padding: 1rem;
+      font-size: 24px;
+      text-align: center;
+    }
+    .button {
+      background-color: var(--secondary-color);
+      color: var(--primary-color);
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+    .testimonials {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .carousel {
+      position: relative;
+      height: 60px;
+      overflow: hidden;
+    }
+    .quote {
+      animation: slide 12s infinite;
+      position: absolute;
+      width: 100%;
+      opacity: 0;
+      font-size: 1.2em;
+      transition: opacity 1s ease-in-out;
+    }
+    .quote:nth-child(1) { animation-delay: 0s; }
+    .quote:nth-child(2) { animation-delay: 4s; }
+    .quote:nth-child(3) { animation-delay: 8s; }
+    @keyframes slide {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      30% { opacity: 1; }
+      40% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    .topic-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .topic-buttons button {
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      background-color: #2c3e50;
+      color: #fff;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .topic-buttons button:hover {
+      background-color: #34495e;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div style="background-color: #fff8dc; color: #444; padding: 15px; text-align: center; font-weight: bold; border-bottom: 2px solid #ccc;">
+    🚧 Sovereign Academy is still under active construction — but we're already live and ready to help! Check back often for new topics and tools. 💪
+  </div>
+
+  <div class="navbar">
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="ask-sage.html">Ask Sage</a> |
+    <a href="traffic.html">Traffic Stop Rights</a> |
+    <a href="court-prep.html">Court Prep</a> |
+    <a href="dss-defense.html">DSS Defense</a> |
+    <a href="dss-strategy-tools.html">Strategy Tools</a> |
+    <a href="printable-resources.html">Printable Resources</a>
+  </div>
+
+  <div style="text-align: center; margin-top: 20px;">
+    <button id="installBtn" style="padding: 10px 20px; font-size: 16px; border-radius: 6px; cursor: pointer; display: none;">
+      📲 Install Sovereign Academy App
+    </button>
+  </div>
+
+  <div style="text-align: center; margin-top: 40px;">
+    <input type="text" id="smartSearch" placeholder="🔍 Search legal topics..." style="padding: 10px 40px 10px 20px; width: 60%; font-size: 16px; border-radius: 6px; border: 1px solid #ccc;" onkeyup="smartNavigate(this.value)">
+  </div>
+
+  <section class="testimonials">
+    <h2>What People Are Saying</h2>
+    <div class="carousel">
+      <div class="quote">"I never thought I could file my own motion — until now!" – Maria T.</div>
+      <div class="quote">"The Court Prep checklist gave me confidence!" – Jamal W.</div>
+      <div class="quote">"Sovereign Academy is a lighthouse in legal fog." – Leah R.</div>
+    </div>
+  </section>
+
+  <section style="text-align: center; margin: 50px 0;">
+    <h2>🛡 DSS Defense Center</h2>
+    <p>Have you been wronged by DSS? Speak up. Get support. Fight back.</p>
+    <a href="dss-strategy-tools.html" class="button">Go to DSS Defense</a>
+  </section>
+
+  <div class="topic-buttons">
+    <button onclick="setTopic('custody')">👪 Custody & Family Law</button>
+    <button onclick="setTopic('eviction')">🏠 Evictions & Housing</button>
+    <button onclick="setTopic('records')">📂 Criminal Records & Rights</button>
+    <button onclick="setTopic('dss')">🧾 CPS & DSS Defense</button>
+    <button onclick="setTopic('liberties')">⚖️ Civil Liberties & Due Process</button>
+    <button onclick="setTopic('estate')">🏛 Estate & Probate</button>
+  </div>
+
+  <script>
+    let deferredPrompt;
+    const installBtn = document.getElementById('installBtn');
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      installBtn.style.display = 'inline-block';
+    });
+    installBtn.addEventListener('click', () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('App installed');
+          }
+          deferredPrompt = null;
+          installBtn.style.display = 'none';
+        });
+      }
+    });
+
+    function setTopic(topic) {
+      localStorage.setItem('userTopic', topic);
+      alert(`Topic set to: ${topic}`);
+    }
+
+    function smartNavigate(value) {
+      console.log("Smart search value:", value);
+    }
+  </script>
+
+  <!-- Tawk.to Script -->
+  <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/681d203afe55ac190d5636e6/1iqosbpkt';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+  </script>
+
+</body>
+</html>
