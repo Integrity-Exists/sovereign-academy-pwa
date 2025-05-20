@@ -1,5 +1,5 @@
 # sovereign-academy-pwa
-A mobile-first progressive web app empowering individuals with self-help legal tools, printable resources and real-time AI legal guidance. Built for the People - by the People.
+A mobile-first progressive web app empowering individuals with self-help legal tools, printable resources and real-time AI legal guidance. Built for the People - by the People!
 
 ## Features
 -Printable legal esources (DSS, arrests, custody & more)
