@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="Sovereign Academy: Your AI-powered legal toolkit for self-representation, DSS defense, and knowing your rights." />
   <meta property="og:title" content="Sovereign Academy" />
@@ -10,10 +11,11 @@
   <meta property="og:image" content="https://integrityexists.com/icons/ask-sage-cover.png" />
   <meta property="og:url" content="https://integrityexists.com" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="manifest" href="manifest.json" />
-  <link rel="icon" href="/icons/icon-192.png" type="image/png" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" href="/icons/icon-192x192.png" type="image/png" />
   <link rel="apple-touch-icon" href="/icons/icon-512.png" />
   <title>Sovereign Academy - Home</title>
+
   <style>
     :root {
       --primary-color: #2C3E50;
@@ -32,6 +34,11 @@
       padding: 1rem;
       font-size: 24px;
       text-align: center;
+    }
+    .navbar a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      margin: 0 10px;
     }
     .button {
       background-color: var(--secondary-color);
@@ -92,6 +99,7 @@
   </style>
 </head>
 <body>
+
   <div style="background-color: #fff8dc; color: #444; padding: 15px; text-align: center; font-weight: bold; border-bottom: 2px solid #ccc;">
     🚧 Sovereign Academy is still under active construction — but we're already live and ready to help! Check back often for new topics and tools. 💪
   </div>
@@ -142,6 +150,7 @@
     <button onclick="setTopic('estate')">🏛 Estate & Probate</button>
   </div>
 
+  <!-- Install & Topic Script -->
   <script>
     let deferredPrompt;
     const installBtn = document.getElementById('installBtn');
@@ -173,7 +182,22 @@
     }
   </script>
 
-  <!-- Tawk.to Script -->
+  <!-- Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(function (registration) {
+            console.log('ServiceWorker registered:', registration);
+          })
+          .catch(function (error) {
+            console.error('ServiceWorker registration failed:', error);
+          });
+      });
+    }
+  </script>
+
+  <!-- Tawk.to Chat -->
   <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
