@@ -1,9 +1,11 @@
 {
   "name": "Sovereign Academy",
   "short_name": "Sovereign",
-  "description": "Your AI-powered legal toolkit for court battles, self-representation and knowing your rights.",
+  "description": "You:r AI-powered legal toolkit for court battles, self-representation and justice education."
   "start_url": "/index.html",
   "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
   "background_color": "#ffffff",
   "theme_color": "#2C3E50",
   "icons": [
