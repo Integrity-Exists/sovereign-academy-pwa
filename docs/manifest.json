@@ -1,6 +1,7 @@
 {
   "name": "Sovereign Academy",
   "short_name": "Sovereign",
+  "id": "/"
   "description": "Your AI-powered legal toolkit for court battles, self-representation and justice education.",
   "start_url": "/index.html",
   "display": "standalone",
