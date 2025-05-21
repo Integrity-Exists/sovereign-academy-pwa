@@ -24,5 +24,15 @@
 <body>
   <h1>Welcome to Sovereign Academy</h1>
   <p>Your AI-powered legal toolkit is live and ready for battle.</p>
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(reg => console.log('✅ Service Worker registered:', reg))
+        .catch(err => console.error('❌ Service Worker error:', err));
+    });
+  }
+</script>
+
 </body>
 </html>
