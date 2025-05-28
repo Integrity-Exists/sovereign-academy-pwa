@@ -21,20 +21,21 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
 </head>
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js')
-        .then(reg => console.log('✅ Service Worker registered:', reg))
-        .catch(err => console.error('❌ Service Worker registration failed:', err));
-    });
-  }
-</script>
+
 
 <body>
   <h1>Welcome to Sovereign Academy</h1>
   <p>Your AI-powered legal toolkit is live and ready for battle.</p>
 
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(reg => console.log('✅ Service Worker registered:', reg))
+        .catch(err => console.error('❌ Service worker registration failed:', err));
+    });
+  }
+</script>
 
 </body>
 </html>
