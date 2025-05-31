@@ -68,16 +68,24 @@
         "application/pdf": [".pdf"],
         "application/json": [".json"]
           ],
-  "categories": [
-    "productivity",
-    "education",
-    "utilities"
-  ],
+  ],  ],
+  "categories": ["productivity", "education", "utilities"],
   "protocol_handlers": [
     {
-      "protocol": "web+open-case",
+      "protocol": "web-open-case",
       "url": "/open-case.html?case=%s"
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "/open-case.html",
+      "accept": {
+        "application/pdf": [".pdf"],
+        "application/json": [".json"]
+      }
     }
   ]
 }
-      
+
+
+
