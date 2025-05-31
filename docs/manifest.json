@@ -4,13 +4,13 @@
   "id": "/index.html",
   "dir": "ltr",
   "lang": "en",
-  "description": "Sovereign Academy is your AI-powered legal toolkit. Fight CPS, defend your rights in court, and learn the law in plain English. Get real legal forms, self-representation strategies, and 24/7 AI coaching—no law degree required.",
   "start_url": "index.html",
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
   "background_color": "#ffffff",
   "theme_color": "#2C3E50",
+  "description": "Sovereign Academy is your AI-powered legal toolkit. Fight CPS, defend your rights in court, and learn the law in plain English. Get real legal forms, self-representation strategies, and 24/7 AI chat built by people who lived it.",
   "icons": [
     {
       "src": "icons/icon-192-any.png",
@@ -37,7 +37,6 @@
       "purpose": "maskable"
     }
   ],
-}
   "launch_handler": {
     "client_mode": "navigate-existing"
   },
@@ -54,6 +53,9 @@
       "sizes": "1280x720",
       "label": "Key features"
     }
+  ]
+}
+
 "categories": ["education", "productivity", "utilities"],
 "protocol_handlers": [
   {
