@@ -67,8 +67,7 @@
       "accept": {
         "application/pdf": [".pdf"],
         "application/json": [".json"]
-          ],
-  ],  ],
+     ],
   "categories": ["productivity", "education", "utilities"],
   "protocol_handlers": [
     {
