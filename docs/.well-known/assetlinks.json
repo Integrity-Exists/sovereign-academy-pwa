@@ -4,8 +4,10 @@
     "target": {
       "namespace": "android_app",
       "package_name": "io.github.integrity_exists.twa",
-      "sha256_cert_fingerprints":
-        ["20:28:6A:B3:62:4A:D2:07:EB:AD:36:DD:44:2D:0C:7C:85:93:1C:BB:33:77:0C:B7:36:2A:30:1D:C0:F1:D9:C5"]
+       "sha256_cert_fingerprints": [
+  "86:33:5B:4B:69:35:F0:55:BA:68:54:1C:62:55:5F:EB:BB:3E:F5:8C:68:DC:41:30:67:58:8D:32:37:F9:65:25"
+]
+
     }
   }
 ]
