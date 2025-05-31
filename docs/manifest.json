@@ -6,7 +6,6 @@
   "lang": "en"
 
   "description": "Your AI-powered legal toolkit for court battles, self-representation and justice education.",
-  <link rel="preload" href="manifest.json" as="fetch" crossorigin="anonymous">
 
   "start_url": "index.html",
   "display": "standalone",
