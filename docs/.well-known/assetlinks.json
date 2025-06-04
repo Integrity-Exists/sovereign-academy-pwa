@@ -1,11 +1,12 @@
-
 [
   {
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
       "package_name": "com.sovereignacademy",
-      "sha256_cert_fingerprints": ["7065A5EF3E93EFC05B325788567B06A8E01CEE46"]
+      "sha256_cert_fingerprints": [
+        "96:7A:1F:9E:32:C3:21:0E:36:7F:53:D5:55:28:38:B9:E1:90:9D:C2:8A:C8:5D"
+      ]
     }
   }
 ]
