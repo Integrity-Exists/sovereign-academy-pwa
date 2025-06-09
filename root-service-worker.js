@@ -1,20 +1,48 @@
-/* responsive.css */
-@media only screen and (max-width: 768px) {
-    body {
-        font-size: 16px;
-    }
+const CACHE_NAME = 'sovereign-academy-v1';
+const urlsToCache = [
+  '/',
+  '/index.html',
+  '/style.css',
+  '/download-responsive.css',
+  '/smart-search.js',
+  '/voice-search.js',
+  '/manifest.json',
+  '/icons/icon-192-any.png',
+  '/icons/icon-512-any.png',
+  '/icons/icon-192-maskable.png',
+  '/icons/icon-512-maskable.png'
+];
 
-    header, footer {
-        padding: 0.5em;
-    }
+// Install and cache
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(urlsToCache);
+    })
+  );
+});
 
-    main {
-        padding: 1em;
-    }
+// Fetch from cache first
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request).then(response => {
+      return response || fetch(event.request);
+    })
+  );
+});
 
-    button {
-        width: 100%;
-        font-size: 16px;
-    }
-}
-
+// Cleanup old caches
+self.addEventListener('activate', event => {
+  const cacheWhitelist = [CACHE_NAME];
+  event.waitUntil(
+    caches.keys().then(keyList =>
+      Promise.all(
+        keyList.map(key => {
+          if (!cacheWhitelist.includes(key)) {
+            return caches.delete(key);
+          }
+        })
+      )
+    )
+  );
+});
