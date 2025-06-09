@@ -5,6 +5,7 @@
   <title>Open Case - Sovereign Academy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/style.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,23 +14,31 @@
       color: #2c3e50;
     }
     h1 {
-      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    p {
+      text-align: center;
+      margin-bottom: 2rem;
     }
     pre {
       background: #eee;
       padding: 1rem;
       border-radius: 8px;
       overflow-x: auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      max-width: 900px;
+      margin: 0 auto;
     }
   </style>
 </head>
 <body>
-  <h1>Opened Legal File</h1>
-  <p>If this is a JSON case file, you'll see the parsed content below:</p>
+  <h1>📂 Opened Legal File</h1>
+  <p>Drag and drop a legal case file into the app — JSON files will be parsed below.</p>
   <pre id="file-content">Waiting for file...</pre>
 
   <script>
-    // Only works if the browser supports launchQueue (PWA file handler API)
     if ('launchQueue' in window && 'files' in LaunchParams.prototype) {
       window.launchQueue.setConsumer(async (launchParams) => {
         if (!launchParams.files.length) return;
@@ -43,13 +52,12 @@
         } else if (file.type === "application/pdf") {
           window.open(URL.createObjectURL(file), '_blank');
         } else {
-          document.getElementById('file-content').textContent = "Unsupported file type.";
+          document.getElementById('file-content').textContent = "❌ Unsupported file type.";
         }
       });
     } else {
-      document.getElementById('file-content').textContent = "File handler API not supported in this browser.";
+      document.getElementById('file-content').textContent = "⚠️ File handler API not supported in this browser.";
     }
   </script>
-  
 </body>
 </html>
