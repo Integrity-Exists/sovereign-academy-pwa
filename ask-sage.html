@@ -123,6 +123,15 @@
     })();
   </script>
   <!-- End of Tawk.to Script -->
+  <!-- Register Service Worker -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js');
+    });
+  }
+</script>
+
 
 </body>
 </html>
