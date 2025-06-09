@@ -3,107 +3,109 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#2C3E50" />
-  <meta name="description" content="Custody & Family Law help — Ask Sage about visitation, parenting plans, and emergency motions." />
+  <title>DSS Defense – Sovereign Academy</title>
   <link rel="manifest" href="manifest.json" />
-  <link rel="icon" href="icons/icon-192x192.png" type="image/png" />
-  <link rel="apple-touch-icon" href="icons/icon-512x512.png" />
-  <title>Custody & Family Law Help</title>
-
+  <link rel="stylesheet" href="css/style.css" />
   <style>
-    :root {
-      --primary-color: #2C3E50;
-      --secondary-color: #F4D03F;
-      --accent-color: #ECF0F1;
-    }
     body {
+      background-color: #ECF0F1;
+      color: #2C3E50;
       font-family: Arial, sans-serif;
-      margin: 0;
       padding: 20px;
-      background-color: var(--accent-color);
-      color: var(--primary-color);
+    }
+    .navbar {
+      background-color: #2C3E50;
+      color: #F4D03F;
+      padding: 1rem;
+      font-size: 24px;
+      text-align: center;
+    }
+    .navbar a {
+      color: #F4D03F;
+      margin: 0 10px;
+      text-decoration: none;
     }
     h1 {
       text-align: center;
     }
-    p {
-      text-align: center;
-      max-width: 600px;
-      margin: 10px auto;
-    }
-    .search-container {
-      text-align: center;
+    .section {
       margin-top: 30px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    #smartSearch {
-      padding: 10px 20px;
-      width: 60%;
-      font-size: 16px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
+    .section h2 {
+      color: #2C3E50;
     }
-    .voice-btn {
+    .button {
+      background-color: #F4D03F;
+      color: #2C3E50;
       padding: 10px 20px;
-      font-size: 16px;
-      border-radius: 6px;
+      border-radius: 5px;
+      border: none;
       cursor: pointer;
-      margin-top: 10px;
-      background-color: var(--primary-color);
-      color: #fff;
-      border: none;
+      text-decoration: none;
+      font-weight: bold;
     }
-    iframe#sageChatWindow {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 320px;
-      height: 440px;
-      border: none;
-      z-index: 999;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      border-radius: 8px;
+    .button:hover {
+      background-color: #f1c40f;
     }
   </style>
 </head>
 <body>
 
-  <h1>👪 Custody & Family Law Help</h1>
-  <p>Welcome to your legal support hub for custody and family law questions. Ask Sage anything — visitation, parenting plans, or emergency hearings.</p>
-
-  <div class="search-container">
-    <input type="text" id="smartSearch" placeholder="🔍 Search legal topics..." onkeyup="smartNavigate(this.value)" />
-    <br>
-    <button class="voice-btn" onclick="startVoiceSearch()">🎤 Voice Search</button>
+  <div class="navbar">
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="ask-sage.html">Ask Sage</a> |
+    <a href="court-prep.html">Court Prep</a> |
+    <a href="dss-strategy-tools.html">Strategy Tools</a>
   </div>
 
-  <!-- AI Chatbot Iframe -->
-  <iframe id="sageChatWindow" src="sage-chatbot.html"></iframe>
+  <h1>🧾 DSS Defense Center</h1>
 
-  <!-- Smart + Voice Scripts -->
-  <script src="smart-search.js"></script>
-  <script src="voice-search.js"></script>
+  <div class="section">
+    <p>If DSS/CPS has stepped into your life — you’re not powerless. This page is your first shield in defending yourself and your family. We’re not attorneys, but we’ve been in the fight, and we’re here to equip you with strategy, documents, and bold truth.</p>
 
-  <!-- Service Worker -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js')
-          .then(reg => console.log('Service Worker registered ✅', reg))
-          .catch(err => console.error('Service Worker registration failed ❌', err));
-      });
-    }
-  </script>
+    <h2>🚨 If They Show Up at Your Door:</h2>
+    <ul>
+      <li>You have the right to remain silent. You do NOT have to let them in without a warrant.</li>
+      <li>Ask for all allegations in writing — don’t speak off the record.</li>
+      <li>Record the interaction if legal in your state (check <a href="https://www.rcfp.org/reporters-recording-guide/" target="_blank">this guide</a>).</li>
+    </ul>
 
-  <!-- Tawk.to Chat -->
+    <h2>🧠 Know Your Rights:</h2>
+    <ul>
+      <li>You have the right to an attorney before signing anything.</li>
+      <li>You can refuse entry without a court order or exigent circumstances.</li>
+      <li>You are not obligated to take drug tests on the spot. Request it through your attorney or court.</li>
+    </ul>
+
+    <h2>📄 Essential Tools:</h2>
+    <ul>
+      <li><a href="dss-strategy-tools.html" class="button">Open the Strategy Toolkit</a></li>
+      <li><a href="printable-resources.html" class="button">Get Printable Templates</a></li>
+      <li><a href="ask-sage.html" class="button">Ask Sage for Help</a></li>
+    </ul>
+
+    <h2>🛡 Tip from Sage:</h2>
+    <p>DSS often depends on fear and confusion. Knowledge is your weapon. Use it with boldness and calm. Every word you say becomes evidence — make sure it’s strategic.</p>
+
+    <p style="text-align: center; margin-top: 40px;">
+      <a href="index.html" class="button">⬅️ Back to Home</a>
+    </p>
+  </div>
+
+  <!-- Tawk.to Chat Script -->
   <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/681d203afe55ac190d5636e6/1iqosbpkt';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/681d203afe55ac190d5636e6/1iqosbpkt';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
     })();
   </script>
 
