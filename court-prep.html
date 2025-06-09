@@ -112,6 +112,17 @@
       s0.parentNode.insertBefore(s1,s0);
     })();
   </script>
+  <!-- Register Service Worker -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(reg => console.log('✅ Service Worker registered:', reg))
+        .catch(err => console.error('❌ Service Worker failed:', err));
+    });
+  }
+</script>
+
 </body>
 </html>
 
